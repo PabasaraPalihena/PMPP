@@ -3,9 +3,11 @@ export interface Project {
   title: string;
   description: string;
   longDescription?: string;
-  technologies: string[];
   link?: string;
   github?: string;
+  video?: string;
+  website?: string;
+  linkedin?: string;
   image?: string;
   featured?: boolean;
 }

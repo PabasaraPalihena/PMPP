@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaVideo, FaGlobe, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Projects() {
@@ -44,7 +44,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project) => (
             <motion.div
@@ -52,49 +52,13 @@ export default function Projects() {
               variants={itemVariants}
               className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow group"
             >
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center overflow-hidden">
-                <div className="text-gray-400 text-center group-hover:scale-105 transition-transform">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="text-6xl">💻</div>
-                  )}
-                </div>
-              </div>
-
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4">
-                  {project.link && (
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
-                    >
-                      View Project
-                      <FaExternalLinkAlt size={16} />
-                    </Link>
-                  )}
+                <div className="flex flex-wrap items-center gap-3">
 
                   {project.github && (
                     <Link
@@ -102,9 +66,57 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
+                      title="Source code"
                     >
-                      GitHub
-                      <FaGithub size={16} />
+                      <FaGithub size={20} />
+                    </Link>
+                  )}
+
+                  {project.video && (
+                    <Link
+                      href={project.video}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
+                      title="Video demo"
+                    >
+                      <FaVideo size={20} />
+                    </Link>
+                  )}
+
+                  {project.website && (
+                    <Link
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
+                      title="Project website"
+                    >
+                      <FaGlobe size={20} />
+                    </Link>
+                  )}
+
+                  {project.linkedin && (
+                    <Link
+                      href={project.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
+                      title="LinkedIn"
+                    >
+                      <FaLinkedin size={20} />
+                    </Link>
+                  )}
+
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors"
+                      title="Project file"
+                    >
+                      <FaFileAlt size={20} />
                     </Link>
                   )}
                 </div>
