@@ -4,68 +4,53 @@ import { motion } from "framer-motion";
 import { skills } from "@/data/skills";
 
 export default function Skills() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
-    <section id="skills" className="bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+    <section id="skills" className="bg-white px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 mb-12"
+          className="mb-14"
         >
-          Skills & Technologies
-        </motion.h2>
+          <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+            Skills & Technologies
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <p className="text-base leading-relaxed text-gray-600 md:text-lg">
+            A practical toolkit covering frontend, backend, databases, Semantic Web, cloud, AI and collaboration platforms.
+          </p>
+        </motion.div>
+
+        <div className="space-y-8">
           {skills.map((skillGroup, groupIndex) => (
             <motion.div
-              key={groupIndex}
-              initial={{ opacity: 0, y: 20 }}
+              key={skillGroup.category}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: groupIndex * 0.1 }}
+              transition={{ duration: 0.6, delay: groupIndex * 0.06 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-6 rounded-lg"
+              className="grid gap-5 border-b border-slate-200 pb-8 last:border-b-0 md:grid-cols-[240px_1fr]"
             >
-              <h3 className="text-lg font-bold text-gray-900 mb-4">{skillGroup.category}</h3>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {skillGroup.category}
+                </h3>
+              </div>
 
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="space-y-2"
-              >
-                {skillGroup.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    variants={itemVariants}
-                    className="px-3 py-2 bg-white rounded-md text-gray-700 text-sm font-medium hover:bg-gray-100 transition-colors"
+              <div className="flex flex-wrap gap-3">
+                {skillGroup.skills.map((skill) => (
+                  <motion.span
+                    key={skill}
+                    whileHover={{ y: -3 }}
+                    transition={{ duration: 0.2 }}
+                    className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-shadow hover:shadow-md"
                   >
                     {skill}
-                  </motion.div>
+                  </motion.span>
                 ))}
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
