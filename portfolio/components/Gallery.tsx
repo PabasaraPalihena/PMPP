@@ -84,38 +84,41 @@ export default function Gallery() {
           <p className="text-lg text-gray-600">A collection of my work and moments</p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              onClick={() => setSelectedImage(index)}
-              className="group relative overflow-hidden rounded-lg cursor-pointer bg-gray-200 aspect-square"
-            >
-              {/* Placeholder - replace with actual image once uploaded */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <div className="text-center">
-                  <FaImage className="text-4xl text-gray-200 mx-auto mb-2" />
-                  <p className="text-gray-300 text-sm">{image.category}</p>
+        <div className="w-full overflow-hidden">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 20,
+            }}
+            className="flex gap-6 w-max"
+          >
+            {[...galleryImages, ...galleryImages].map((image, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedImage(index % galleryImages.length)}
+                className="group relative overflow-hidden rounded-lg cursor-pointer bg-gray-200 shrink-0 w-80 aspect-square"
+              >
+                {/* Placeholder - replace with actual image once uploaded */}
+                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                  <div className="text-center">
+                    <FaImage className="text-4xl text-gray-200 mx-auto mb-2" />
+                    <p className="text-gray-300 text-sm">{image.category}</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                <div className="text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-white font-bold text-lg">{image.title}</h3>
-                  <p className="text-gray-200 text-sm">{image.category}</p>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-center p-4">
+                    <h3 className="text-white font-bold text-xl mb-1">{image.title}</h3>
+                    <p className="text-gray-200 text-sm">{image.category}</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Lightbox - Optional */}
         {selectedImage !== null && (
