@@ -17,10 +17,6 @@ export default function Skills() {
           <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
             Skills & Technologies
           </h2>
-
-          <p className="text-base leading-relaxed text-gray-600 md:text-lg">
-            A practical toolkit covering frontend, backend, databases, Semantic Web, cloud, AI and collaboration platforms.
-          </p>
         </motion.div>
 
         <div className="space-y-8">

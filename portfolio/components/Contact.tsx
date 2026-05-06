@@ -10,31 +10,31 @@ export default function Contact() {
       icon: FaLinkedin,
       label: "LinkedIn",
       value: "linkedin.com/in/username",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/pabasara-palihena-91a618211/",
     },
     {
       icon: FaGithub,
       label: "GitHub",
       value: "github.com/username",
-      href: "https://github.com",
+      href: "https://github.com/PabasaraPalihena",
     },
     {
       icon: FaResearchgate,
       label: "ResearchGate",
       value: "researchgate.net/profile",
-      href: "https://researchgate.net",
+      href: "https://www.researchgate.net/profile/Pabasara-Palihena",
     },
     {
       icon: FaMedium,
       label: "Medium",
       value: "medium.com/@username",
-      href: "https://medium.com",
+      href: "https://pabasarapalihena.medium.com/",
     },
     {
       icon: FaEnvelope,
-      label: "pahhhh-test@gmail.com",
-      value: "pahhhh-test@gmail.com",
-      href: "mailto:pahhhh-test@gmail.com",
+      label: "pabasarapalihena@gmail.com",
+      value: "pabasarapalihena@gmail.com",
+      href: "mailto:pabasarapalihena@gmail.com",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function Contact() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
           <p className="text-lg text-gray-600">
-            I&apos;m always interested in hearing about new projects and opportunities.
+            I&apos;m always interested in hearing about new projects and collaborations.
           </p>
         </motion.div>
 

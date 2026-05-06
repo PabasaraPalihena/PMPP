@@ -78,7 +78,6 @@ export default function Gallery() {
             <FaImage className="text-3xl text-gray-900" />
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Gallery</h2>
           </div>
-          <p className="text-lg text-gray-600">A collection of my work and moments</p>
         </motion.div>
 
         <div className="w-full overflow-hidden">
