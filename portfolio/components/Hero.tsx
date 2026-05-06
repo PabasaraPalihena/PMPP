@@ -19,7 +19,7 @@ const heroSocials = socialLinks.filter((s) => s.platform !== "email");
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-white px-6 py-20 pt-32">
+    <section className="relative min-h-screen flex items-center justify-center bg-white px-6 pt-8 pb-20">
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         {/* Left Column: Text */}
@@ -31,13 +31,12 @@ export default function Hero() {
         >
           {/* Main Heading */}
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           >
-            Hi,<br />
-            I&apos;m Pabasara<br />
+            I&apos;m Pabasara Palihena
           </motion.h1>
 
           {/* Subheading */}
@@ -47,7 +46,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            I build elegant solutions to complex problems using React, TypeScript, and modern web technologies.
+            return 0;
+            {/* if (!success) retry(); */}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -102,7 +102,7 @@ export default function Hero() {
         <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
           <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px]">
             <Image
-              src="/assets/images/Hero.png"
+              src="/assets/images/HeroImg.png"
               alt="Pabasara Palihena"
               fill
               className="object-contain"
