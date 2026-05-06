@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaResearchgate } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaResearchgate, FaMedium } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Contact() {
   const contactMethods = [
     {
-      icon: FaEnvelope,
-      label: "Email",
-      value: "your-email@example.com",
-      href: "mailto:your-email@example.com",
+      icon: FaLinkedin,
+      label: "LinkedIn",
+      value: "linkedin.com/in/username",
+      href: "https://linkedin.com",
     },
     {
       icon: FaGithub,
@@ -19,16 +19,22 @@ export default function Contact() {
       href: "https://github.com",
     },
     {
-      icon: FaLinkedin,
-      label: "LinkedIn",
-      value: "linkedin.com/in/username",
-      href: "https://linkedin.com",
-    },
-    {
       icon: FaResearchgate,
       label: "ResearchGate",
       value: "researchgate.net/profile",
       href: "https://researchgate.net",
+    },
+    {
+      icon: FaMedium,
+      label: "Medium",
+      value: "medium.com/@username",
+      href: "https://medium.com",
+    },
+    {
+      icon: FaEnvelope,
+      label: "pahhhh-test@gmail.com",
+      value: "pahhhh-test@gmail.com",
+      href: "mailto:pahhhh-test@gmail.com",
     },
   ];
 
@@ -53,7 +59,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="flex flex-wrap justify-center gap-4 md:gap-6"
         >
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
@@ -68,37 +74,16 @@ export default function Contact() {
                 <Link
                   href={method.href}
                   target="_blank"
-                  className="block bg-white p-6 rounded-lg hover:shadow-lg transition-shadow group"
+                  className="flex items-center gap-3 px-6 py-4 md:px-8 bg-white rounded-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-gray-100"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900">{method.label}</h3>
-                      <p className="text-gray-600 text-sm mt-1">{method.value}</p>
-                    </div>
+                  <div className="p-2 bg-gray-50 rounded-full group-hover:bg-[#122D64] group-hover:text-white transition-colors text-gray-700">
+                    <Icon size={24} />
                   </div>
+                  <span className="font-bold text-gray-900 group-hover:text-[#122D64] transition-colors">{method.label}</span>
                 </Link>
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Main CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="mailto:your-email@example.com"
-            className="inline-block px-8 py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-colors text-lg"
-          >
-            Send Me an Email
-          </Link>
         </motion.div>
       </div>
     </section>
