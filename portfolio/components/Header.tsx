@@ -51,7 +51,7 @@ export default function Header() {
               >
                 {hoveredItem === item.href && (
                   <motion.span
-                    className="absolute left-1/2 top-1/2 -z-10 h-10 w-20 bg-[#122D64]"
+                    className="absolute left-1/2 top-1/2 -z-10 h-10 w-20 bg-gray-900"
                     initial={{
                       x: "-50%",
                       y: "-50%",
@@ -106,7 +106,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-blue-100"
+                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}

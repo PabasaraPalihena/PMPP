@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaBookOpen } from "react-icons/fa";
 
 export default function Academic() {
   const education = [
@@ -66,12 +65,9 @@ export default function Academic() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="mb-12 flex items-center gap-3">
-            <FaGraduationCap className="text-3xl text-gray-900" />
-            <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 md:text-5xl">
               Education
             </h2>
-          </div>
 
           <div className="space-y-6">
             {education.map((edu, index) => (
@@ -110,12 +106,9 @@ export default function Academic() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="mb-12 flex items-center gap-3">
-            <FaBookOpen className="text-3xl text-gray-900" />
-            <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 md:text-5xl">
               Publications
             </h2>
-          </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {publications.map((pub, index) => (

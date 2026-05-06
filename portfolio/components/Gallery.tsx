@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaImage } from "react-icons/fa";
 import Image from "next/image";
 export default function Gallery() {
 
@@ -66,7 +65,7 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="bg-gray-50 py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,10 +73,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <FaImage className="text-3xl text-gray-900" />
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Gallery</h2>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Gallery</h2>
         </motion.div>
 
         <div className="w-full overflow-hidden">
