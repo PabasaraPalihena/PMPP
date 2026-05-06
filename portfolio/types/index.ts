@@ -18,7 +18,7 @@ export interface Skill {
 }
 
 export interface SocialLink {
-  platform: "github" | "linkedin" | "email" | "researchgate";
+  platform: "github" | "linkedin" | "email" | "researchgate" | "medium";
   url: string;
   label: string;
 }
