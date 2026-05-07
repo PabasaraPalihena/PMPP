@@ -28,7 +28,7 @@ export default function Header() {
           className="flex items-center hover:opacity-80 transition-opacity"
         >
           <Image
-            src="/assets/images/MyLogo.png"
+            src="/assets/images/PLogo.png"
             alt="Logo"
             width={200}
             height={200}

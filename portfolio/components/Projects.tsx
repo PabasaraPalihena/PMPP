@@ -124,6 +124,25 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* More Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex justify-end mt-8"
+        >
+          <Link
+            href="https://github.com/PabasaraPalihena"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-full font-bold hover:bg-red-500 hover:border-red-500 hover:text-white transition-all"
+          >
+            More Projects
+            <FaGithub size={18} className="group-hover:scale-110 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

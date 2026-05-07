@@ -31,23 +31,29 @@ export default function Hero() {
         >
           {/* Main Heading */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-1 leading-tight tracking-tight whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           >
             I&apos;m Pabasara Palihena
           </motion.h1>
+          {/* Red accent underline */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="h-1 w-24 bg-red-500 rounded-full mb-6 origin-left"
+          />
 
           {/* Subheading */}
           <motion.p
-            className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-xl"
+            className="text-2xl md:text-3xl font-bold text-gray-700 mb-10 leading-relaxed max-w-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            return 0;
-            {/* if (!success) retry(); */}
+            Software Engineer
           </motion.p>
 
           {/* CTA Buttons */}
@@ -66,7 +72,7 @@ export default function Hero() {
             </Link>
             <Link
               href="#contact"
-              className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-bold hover:border-gray-900 hover:text-gray-900 hover:bg-white transition-all"
+              className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-bold hover:border-red-500 hover:text-red-500 transition-all"
             >
               Get In Touch
             </Link>

@@ -121,7 +121,7 @@ export default function Academic() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="rounded-xl border-l-4 border-gray-900 bg-gray-50 p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border-l-4 border-red-500 bg-gray-50 p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <h3 className="mb-2 text-lg font-bold text-gray-900">
                   {pub.title}

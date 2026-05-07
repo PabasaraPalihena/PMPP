@@ -40,7 +40,7 @@ export default function About() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             About Me
           </h2>
 
@@ -82,7 +82,7 @@ export default function About() {
                 variants={itemVariants}
                 className="group flex items-start gap-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
               >
-                <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-gray-800 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-red-500 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-red-600 transition-colors">
                   <Icon size={20} />
                 </div>
                 <div>

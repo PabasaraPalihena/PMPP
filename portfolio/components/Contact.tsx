@@ -50,17 +50,26 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-6 py-4 md:px-8 bg-white rounded-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-gray-100"
-                >
-                  <div className="p-2 bg-gray-50 rounded-full group-hover:bg-gray-900 group-hover:text-white transition-colors text-gray-700">
-                    <Icon size={24} />
+                {social.platform === "email" ? (
+                  <div className="flex items-center gap-3 px-6 py-4 md:px-8 bg-white rounded-full shadow-sm border border-gray-100 group cursor-default">
+                    <div className="p-2 bg-gray-50 rounded-full text-gray-700">
+                      <Icon size={24} />
+                    </div>
+                    <span className="font-bold text-gray-900">{social.label}</span>
                   </div>
-                  <span className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors">{social.label}</span>
-                </Link>
+                ) : (
+                  <Link
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-6 py-4 md:px-8 bg-white rounded-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-gray-100"
+                  >
+                    <div className="p-2 bg-gray-50 rounded-full group-hover:bg-gray-900 group-hover:text-white transition-colors text-gray-700">
+                      <Icon size={24} />
+                    </div>
+                    <span className="font-bold text-gray-900 group-hover:text-gray-700 transition-colors">{social.label}</span>
+                  </Link>
+                )}
               </motion.div>
             );
           })}

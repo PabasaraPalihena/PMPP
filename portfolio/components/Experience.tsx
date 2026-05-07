@@ -48,9 +48,9 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div key={index} variants={itemVariants} className="relative pl-8">
               {/* Timeline indicator */}
-              <div className="absolute left-0 top-2 w-6 h-6 bg-gray-900 rounded-full border-4 border-white" />
+              <div className="absolute left-0 top-2 w-6 h-6 bg-red-500 rounded-full border-4 border-white" />
               {index !== experiences.length - 1 && (
-                <div className="absolute left-3 top-8 w-0.5 h-24 bg-gray-200" />
+                <div className="absolute left-3 top-8 w-0.5 h-24 bg-red-200" />
               )}
 
               <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
