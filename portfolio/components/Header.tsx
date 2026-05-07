@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -11,21 +10,33 @@ export default function Header() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Academic", href: "#academic" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", id: "about" },
+    { label: "Experience", id: "experience" },
+    { label: "Projects", id: "projects" },
+    { label: "Skills", id: "skills" },
+    { label: "Academic", id: "academic" },
+    { label: "Gallery", id: "gallery" },
+    { label: "Contact", id: "contact" },
   ];
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    window.history.pushState(null, "", `/${id}`);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.pushState(null, "", "/");
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link
-          href="#"
+        <button
+          onClick={scrollToTop}
           className="flex items-center hover:opacity-80 transition-opacity"
+          aria-label="Scroll to top"
         >
           <Image
             src="/assets/images/PLogo.png"
@@ -35,21 +46,21 @@ export default function Header() {
             className="h-12 w-auto"
             priority
           />
-        </Link>
+        </button>
 
         <div className="hidden md:flex items-center gap-2">
           {navItems.map((item) => (
             <div
-              key={item.href}
+              key={item.id}
               className="relative"
-              onMouseEnter={() => setHoveredItem(item.href)}
+              onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
-              <Link
-                href={item.href}
+              <button
+                onClick={() => scrollTo(item.id)}
                 className="relative block px-5 py-3 text-sm font-medium text-gray-700 transition-colors hover:text-white"
               >
-                {hoveredItem === item.href && (
+                {hoveredItem === item.id && (
                   <motion.span
                     className="absolute left-1/2 top-1/2 -z-10 h-10 w-20 bg-gray-900"
                     initial={{
@@ -76,9 +87,8 @@ export default function Header() {
                     }}
                   />
                 )}
-
                 <span className="relative z-10">{item.label}</span>
-              </Link>
+              </button>
             </div>
           ))}
         </div>
@@ -103,14 +113,13 @@ export default function Header() {
           >
             <div className="flex flex-col gap-2 px-6 py-4">
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-gray-100"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  key={item.id}
+                  onClick={() => { scrollTo(item.id); setMobileMenuOpen(false); }}
+                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-gray-100 text-left"
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
             </div>
           </motion.div>
@@ -119,3 +128,4 @@ export default function Header() {
     </header>
   );
 }
+
