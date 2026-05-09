@@ -12,7 +12,7 @@ export default function Gallery() {
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/Mensch.png",
+      src: "/assets/projects/Mensch-Day2.jpg",
       alt: "Project 2",
       title: "Volunteering at Mensch und Computer Conference",
       objectPosition: "object-center",
@@ -24,21 +24,27 @@ export default function Gallery() {
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/MarxDev.jpeg",
+      src: "/assets/projects/Mensch-Day3.jpg",
       alt: "Project 4",
-      title: "Planspiel Web Engineering WS25/26",
+      title: "Volunteering at Mensch und Computer Conference",
+      objectPosition: "object-center",
+    },
+    {
+      src: "/assets/projects/MarxDev.jpeg",
+      alt: "Project 5",
+      title: "MarxDev",
       objectPosition: "object-center",
     },
     {
       src: "/assets/projects/MarxDev2.jpeg",
-      alt: "Project 5",
+      alt: "Project 6",
       title: "Planspiel Web Engineering WS25/26 - Final Pitch",
       objectPosition: "object-center",
     },
     {
       src: "/assets/projects/OfficeGathering.jpg",
-      alt: "Project 6",
-      title: "Office Gathering",
+      alt: "Project 7",
+      title: "Christmas 2025",
       objectPosition: "object-top",
     },
   ];
