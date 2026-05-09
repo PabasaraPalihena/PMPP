@@ -84,11 +84,12 @@ export default function Gallery() {
 
         <div className="w-full overflow-hidden">
           <motion.div
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["0%", "-100%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 25,
+              duration: 50,
+              repeatType: "loop",
             }}
             className="flex gap-4 md:gap-6 w-max"
           >
