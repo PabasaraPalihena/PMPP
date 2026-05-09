@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: "software engineer",
   authors: [{ name: "Pabasara Palihena" }],
   icons: {
-    icon: "/assets/images/PLogo.png",
+    icon: "/PMPP/assets/images/PLogo.png",
   },
 };
 
