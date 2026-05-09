@@ -84,7 +84,7 @@ export default function Gallery() {
 
         <div className="w-full overflow-hidden">
           <motion.div
-            animate={{ x: ["0%", "-100%"] }}
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
