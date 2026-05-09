@@ -39,7 +39,7 @@ export default function Header() {
           aria-label="Scroll to top"
         >
           <Image
-            src="/assets/images/PLogo.png"
+            src="/PMPP/assets/images/PLogo.png"
             alt="Logo"
             width={200}
             height={200}

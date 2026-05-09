@@ -6,43 +6,43 @@ export default function Gallery() {
 
   const galleryImages = [
     {
-      src: "/assets/projects/Graduation.jpeg",
+      src: "/PMPP/assets/projects/Graduation.jpeg",
       alt: "Project 1",
       title: "Bachelor's Graduation",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/Mensch-Day2.jpg",
+      src: "/PMPP/assets/projects/Mensch-Day2.jpg",
       alt: "Project 2",
       title: "Volunteering at Mensch und Computer Conference",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/IMG-Conference.jpeg",
+      src: "/PMPP/assets/projects/IMG-Conference.jpeg",
       alt: "Project 3",
       title: "Volunteering at Mensch und Computer Conference",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/Mensch-Day3.jpg",
+      src: "/PMPP/assets/projects/Mensch-Day3.jpg",
       alt: "Project 4",
       title: "Volunteering at Mensch und Computer Conference",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/MarxDev.jpeg",
+      src: "/PMPP/assets/projects/MarxDev.jpeg",
       alt: "Project 5",
       title: "MarxDev",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/MarxDev2.jpeg",
+      src: "/PMPP/assets/projects/MarxDev2.jpeg",
       alt: "Project 6",
       title: "Planspiel Web Engineering WS25/26 - Final Pitch",
       objectPosition: "object-center",
     },
     {
-      src: "/assets/projects/OfficeGathering.jpg",
+      src: "/PMPP/assets/projects/OfficeGathering.jpg",
       alt: "Project 7",
       title: "Christmas 2025",
       objectPosition: "object-top",

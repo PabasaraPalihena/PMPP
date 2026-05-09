@@ -108,7 +108,7 @@ export default function Hero() {
         <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
           <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px]">
             <Image
-              src="/assets/images/HeroImg.png"
+              src="/PMPP/assets/images/HeroImg.png"
               alt="Pabasara Palihena"
               fill
               className="object-contain"
