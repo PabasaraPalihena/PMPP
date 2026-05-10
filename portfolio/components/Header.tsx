@@ -20,9 +20,12 @@ export default function Header() {
   ];
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-    window.history.pushState(null, "", `/${id}`);
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `/${id}`);
+    }, 100);
   };
 
   const scrollToTop = () => {
@@ -115,8 +118,8 @@ export default function Header() {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => { scrollTo(item.id); setMobileMenuOpen(false); }}
-                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-gray-100 text-left"
+                  onClick={() => scrollTo(item.id)}
+                  className="rounded-xl px-4 py-3 font-medium text-gray-700 hover:bg-gray-100 text-left w-full transition-colors"
                 >
                   {item.label}
                 </button>
